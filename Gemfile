@@ -28,7 +28,7 @@ gem 'haml-rails'
 
 gem 'annotate'
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'spork', '~> 1.0rc'
