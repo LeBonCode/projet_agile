@@ -24,8 +24,21 @@ gem 'jquery-rails'
 
 gem 'devise'
 
-gem 'haml'
+gem 'haml-rails'
 
+gem 'annotate'
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'spork', '~> 1.0rc'
+  gem 'rb-fsevent'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'database_cleaner'
+  gem 'growl'
+  gem 'ZenTest'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
