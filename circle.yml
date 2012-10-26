@@ -1,0 +1,5 @@
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: guarded-bayou-6733
