@@ -57,6 +57,7 @@ C4::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   resources :achievements
+  resources :users
 
   root :to => 'achievements#new'
 end
