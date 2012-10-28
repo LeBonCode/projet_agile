@@ -22,3 +22,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'sqlite3'
 end
+
+group :development do
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+end
