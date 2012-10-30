@@ -2,12 +2,13 @@ require 'spec_helper'
 
 describe UsersController do
 
-  before(:each) do
-    @user = User.first || FactoryGirl.create(:user)
+  before do
+    @user = FactoryGirl.create(:user_with_subscriptions)
   end
 
   it 'should get show' do
     get 'show', id: @user.id
+    assigns[:subscriptions].should eq(@user.subscriptions)
   end
 
 end
