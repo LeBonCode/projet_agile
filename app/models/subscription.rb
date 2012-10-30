@@ -14,4 +14,6 @@ class Subscription < ActiveRecord::Base
   # attr_accessible :title, :body
   belongs_to :user
   belongs_to :achievement
+
+  scope :succeeded, where(succeeded: true)
 end

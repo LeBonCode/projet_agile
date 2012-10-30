@@ -2,7 +2,7 @@
   = "Show vue"
 
 %ul
-  - @subscriptions.each do |subscription|
+  - @succeeded_subscriptions.each do |subscription|
     %li
       = subscription.id
       = image_tag subscription.achievement.badge.url
