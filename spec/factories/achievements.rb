@@ -23,5 +23,9 @@ FactoryGirl.define do
                   amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis
                   lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat
                   porttitor ligula, eget lacinia odio sem nec elit.'
+    after(:create) do |achievement, evaluator|
+      achievement.badge = File.open(Dir.glob(File.join(Rails.root, 'spec/factories/images/badges', '*')).sample)
+      achievement.save
+    end
   end
 end
