@@ -1,2 +1,7 @@
 %p
   = "Show vue"
+
+%ul
+  - @subscriptions.each do |subscription|
+    %li
+      = subscription.id
