@@ -16,7 +16,7 @@ FactoryGirl.define do
         subscriptions_count 5
       end
       after(:create) do |user, evaluator|
-        FactoryGirl.create_list(:subscription, evaluator.subscriptions_count, user: user)
+        FactoryGirl.create_list(:subscription_with_achievement, evaluator.subscriptions_count, user: user)
       end
     end
   end

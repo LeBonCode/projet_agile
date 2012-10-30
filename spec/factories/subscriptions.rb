@@ -14,5 +14,8 @@
 
 FactoryGirl.define do
   factory :subscription do
+    factory :subscription_with_achievement do
+      association :achievement
+    end
   end
 end
