@@ -11,13 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030183448) do
+ActiveRecord::Schema.define(:version => 20121030214128) do
 
   create_table "achievements", :force => true do |t|
-    t.string   "title",       :null => false
-    t.text     "description", :null => false
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "title",              :null => false
+    t.text     "description",        :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "badge_file_name"
+    t.string   "badge_content_type"
+    t.integer  "badge_file_size"
+    t.datetime "badge_updated_at"
   end
 
   create_table "subscriptions", :force => true do |t|
