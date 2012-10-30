@@ -16,3 +16,6 @@
 
 # Ignore les fichiers de Rubymine
 .idea
+
+# Ignore public/system files
+public/system
