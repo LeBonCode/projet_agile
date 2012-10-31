@@ -3,6 +3,6 @@
   - @achievements.each do |achievement|
     %li
       = achievement.id
-      = achievement.title
+      = link_to achievement.title, achievement
       = achievement.description
     %br
