@@ -6,6 +6,7 @@ describe AchievementsController do
     assigns[:achievement].should be_a_new(Achievement)
     response.should be_success
   end
+
   it 'should post create' do
     achievement = FactoryGirl.build(:achievement)
     post 'create', :achievement => { title: achievement.title, description: achievement.description }
@@ -17,6 +18,12 @@ describe AchievementsController do
   it 'should get index' do
     achievements = FactoryGirl.create_list(:achievement, 10)
     get 'index'
-    assigns[:achievements].should eq(achievements)
+    assigns[:achievements].should eq(Achievement.all)
+  end
+
+  it 'should get show' do
+    achievement = FactoryGirl.create(:achievement)
+    get 'show', id: achievement.id
+    assigns[:achievement].should eq(achievement)
   end
 end
