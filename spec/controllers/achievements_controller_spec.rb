@@ -13,4 +13,10 @@ describe AchievementsController do
     assigns(:achievement).should_not be_new_record
     response.should redirect_to new_achievement_path
   end
+
+  it 'should get index' do
+    achievements = FactoryGirl.create_list(:achievement, 10)
+    get 'index'
+    assigns[:achievements].should eq(achievements)
+  end
 end

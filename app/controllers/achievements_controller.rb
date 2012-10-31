@@ -8,4 +8,8 @@ class AchievementsController < ApplicationController
     @achievement.save
     redirect_to new_achievement_path
   end
+
+  def index
+    @achievements = Achievement.all
+  end
 end
