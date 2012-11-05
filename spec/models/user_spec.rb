@@ -19,8 +19,18 @@ describe User do
     let(:user) { FactoryGirl.create(:user) }
     let(:subscription) { FactoryGirl.create(:subscription) }
 
+    before(:each) do
+      @vote = user.votes.new
+    end
+
     it 'calls user.votes.new' do
-      user.votes.should_receive(:new)
+      user.votes.should_receive(:new).and_return(@vote)
+      user.vote_for(subscription.id)
+    end
+
+    it 'calls v.subscription_id=' do
+      user.votes.stub(:new).and_return(@vote)
+      @vote.should_receive(:subscription_id=)
       user.vote_for(subscription.id)
     end
   end

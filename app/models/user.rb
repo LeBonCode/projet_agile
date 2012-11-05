@@ -15,5 +15,6 @@ class User < ActiveRecord::Base
 
   def vote_for(subscription_id)
     v = votes.new
+    v.subscription_id = subscription_id
   end
 end
