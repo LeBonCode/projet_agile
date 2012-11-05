@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :subscriptions, through: :votes
   has_many :votes
 
-  def vote_for subscription_id
-    votes.new
+  def vote_for(subscription_id)
+    v = votes.new
   end
 end

@@ -17,20 +17,11 @@ describe User do
 
   context '#vote_for' do
     let(:user) { FactoryGirl.create(:user) }
+    let(:subscription) { FactoryGirl.create(:subscription) }
 
-    it 'calls Vote.new' do
+    it 'calls user.votes.new' do
       user.votes.should_receive(:new)
-      user.vote_for nil
+      user.vote_for(subscription.id)
     end
   end
-
-  #context 'a user' do
-  #  before(:each) do
-  #    @user = FactoryGirl.create(:user)
-  #    @subscription = FactoryGirl.create(:subscription)
-  #  end
-  #  it "should vote for another user" do
-  #
-  #  end
-  #end
 end
