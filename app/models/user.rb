@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
   has_many :votes
 
   def vote_for(subscription_id)
-    v = votes.new
-    v.subscription_id = subscription_id
+    vote = votes.new
+    vote.subscription_id = subscription_id
+    vote.save
   end
 end

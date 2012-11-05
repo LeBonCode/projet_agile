@@ -28,9 +28,16 @@ describe User do
       user.vote_for(subscription.id)
     end
 
-    it 'calls v.subscription_id=' do
+    it 'calls vote.subscription_id=' do
       user.votes.stub(:new).and_return(@vote)
       @vote.should_receive(:subscription_id=)
+      user.vote_for(subscription.id)
+    end
+
+    it 'calls vote.save' do
+      user.votes.stub(:new).and_return(@vote)
+      @vote.stub(:subscription_id=)
+      @vote.should_receive(:save)
       user.vote_for(subscription.id)
     end
   end
