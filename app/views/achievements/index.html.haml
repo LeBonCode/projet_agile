@@ -1,8 +1,9 @@
 %h1 Index Achievement
-%ul
-  - @achievements.each do |achievement|
-    %li
-      = achievement.id
-      = link_to achievement.title, achievement
-      = achievement.description
-    %br
+- if @achievements.any?
+  %ul
+    - @achievements.each do |achievement|
+      %li
+        = achievement.id
+        = link_to achievement.title, achievement
+        = achievement.description
+      %br
