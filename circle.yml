@@ -3,3 +3,6 @@ deployment:
     branch: master
     heroku:
       appname: leprojetagile
+    commands:
+      - heroku run rake db:migrate
+      - heroku run rake assets:precompile
