@@ -1,8 +1,9 @@
 %p
   = "Show vue"
 
-%ul
-  - @succeeded_subscriptions.each do |subscription|
-    %li
-      = subscription.id
-      = image_tag subscription.achievement.badge.url
+- unless @succeeded_subscriptions.empty?
+  %ul
+    - @succeeded_subscriptions.each do |subscription|
+      %li
+        = subscription.id
+        = image_tag subscription.achievement.badge.url
