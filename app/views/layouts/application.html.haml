@@ -8,10 +8,16 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %h1 Le Projet Agile
     %header.navbar.navbar-fixed-top
       %nav.navbar-inner
         .container
           = render 'layouts/navigation'
-    #container
-      = yield
+    .container-fluider
+      .row-fluid
+        .span1
+        .span10
+          %br
+          %br
+          %h1 Le Projet Agile
+          = yield
+        .span1
