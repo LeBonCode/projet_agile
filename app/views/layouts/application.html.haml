@@ -9,12 +9,9 @@
     = csrf_meta_tags
   %body
     %h1 Le Projet Agile
-    #navbar
-      %p Liste des nouveaux developpements :
-      %ul
-        %li= link_to 'Liste des objectifs', achievements_path
-        %li= link_to "Création d'un nouvel objectif", new_achievement_path
-        %li= link_to 'Voir le dernier objectif', achievement_path(Achievement.last) if Achievement.last
-        %li= link_to "Voir le profil du dernier utilisateur", user_path(User.last) if User.last
+    %header.navbar.navbar-fixed-top
+      %nav.navbar-inner
+        .container
+          = render 'layouts/navigation'
     #container
       = yield
