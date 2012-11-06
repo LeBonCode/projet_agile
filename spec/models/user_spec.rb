@@ -11,7 +11,7 @@ require 'spec_helper'
 
 describe User do
   it { should have_many(:achievements).through(:subscriptions) }
-  it { should have_many(:subscriptions).through(:votes) }
+  it { should have_many(:voted_subscriptions).through(:votes) }
   it { should respond_to(:vote_for).with(1).arguments }
 
 
