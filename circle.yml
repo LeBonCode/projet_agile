@@ -1,8 +1,7 @@
 deployment:
   staging:
     branch: master
-    heroku:
-      appname: leprojetagile
     commands:
+      - git push git@heroku.com:leprojetagile.git
       - heroku run rake db:migrate
       - heroku run rake assets:precompile
