@@ -19,3 +19,5 @@
 
 # Ignore public/system files
 public/system
+
+.DS_Store
