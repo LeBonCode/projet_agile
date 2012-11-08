@@ -8,5 +8,6 @@ describe UsersController do
   it 'should get show' do
     get 'show', id: @user.id
     assigns[:succeeded_subscriptions].should eq(@user.subscriptions.succeeded)
+    assigns[:not_succeeded_subscriptions].should eq(@user.subscriptions.not_succeeded)
   end
  end
