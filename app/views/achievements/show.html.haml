@@ -1,5 +1,6 @@
-%h1= @achievement.title
+%h1 Show Achievement
 %ul
   %li= "id : " << @achievement.id.to_s
+  %li= @achievement.title
   %li= "description : " << @achievement.description
   %li= image_tag @achievement.badge.url unless @achievement.badge_file_name.nil?

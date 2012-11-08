@@ -1,7 +1,6 @@
-%p
-  = "Show vue"
-
+%h1 Show vue
 - unless @succeeded_subscriptions.empty?
+  %h2 Liste des objectifs accomplis
   %ul
     - @succeeded_subscriptions.each do |subscription|
       %li
