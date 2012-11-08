@@ -20,4 +20,8 @@ describe Subscription do
   it 'should have succeeded_subscriptions named scope' do
     Subscription.succeeded.to_sql.should eq(Subscription.where(succeeded: true).to_sql)
   end
+
+  it 'should have note_succeeded_subscriptions named scope' do
+    Subscription.not_succeeded.to_sql.should eq(Subscription.where(succeeded: false).to_sql)
+  end
 end
