@@ -9,7 +9,7 @@
 
 - unless @not_succeeded_subscriptions.empty?
   %h2 Liste des objectifs en cours
-  %ul
+  %ul.list-achievements-user
     - @not_succeeded_subscriptions.each do |subscription|
       %li
         = subscription.id
