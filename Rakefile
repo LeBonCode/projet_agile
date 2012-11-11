@@ -7,7 +7,7 @@ require File.expand_path('../config/application', __FILE__)
 C4::Application.load_tasks
 
 task :travis do
-  ["bundle exec rspec"].each do |cmd|
+  ["rake db:migrate", "rspec"].each do |cmd|
     puts "Running #{cmd}..."
     system("export DISPLAY=:99.0 && bundle exec #{cmd}")
     raise "#{cmd} failed!" unless $?.exitstatus == 0
