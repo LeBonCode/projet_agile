@@ -10,5 +10,7 @@
 #
 
 class Vote < ActiveRecord::Base
-  has_many :subscriptions
+  attr_accessible :user_id, :subscription_id
+  belongs_to :user
+  belongs_to :subscription
 end
