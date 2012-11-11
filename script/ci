@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+export CI=true
+bundle exec rake db:migrate
+
+bundle exec rake
