@@ -29,4 +29,8 @@ end
 
 group :development do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'ruby_gntp'
+  gem 'rb-fsevent', :require => false
 end
