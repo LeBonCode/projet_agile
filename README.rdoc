@@ -68,10 +68,14 @@ On peut voir cela comme un “coaching de vie”.
     bundle exec rake db:seed
 * Créer la base avec des données fictives
     bundle exec rake db:setup
+* (Re)créer la base à partir du fichier db/schema.rb
+    bundle exec rake db:test:load
 
 === Tests
 * Lancer les tests rspec :
     bundle exec rspec
+* Lancer Guard (tests exécutés à chaque modification de fichier + notifications Growl) :
+    bundle exec guard
 
 === Analyse du code
 * Lancer l'analyse de la qualité du code :
