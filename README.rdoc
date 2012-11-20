@@ -54,3 +54,5 @@ On peut voir cela comme un “coaching de vie”.
     rails s
 * Lancer les tests rspec :
     bundle exec rspec
+* Lancer l'analyse de la qualité du code :
+    bundle exec rails_best_pratices
