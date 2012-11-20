@@ -12,10 +12,4 @@ class User < ActiveRecord::Base
   has_many :subscriptions
   has_many :voted_subscriptions, through: :votes
   has_many :votes
-
-  def vote_for(subscription_id)
-    vote = votes.new
-    vote.subscription_id = subscription_id
-    vote.save
-  end
 end
