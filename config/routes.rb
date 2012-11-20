@@ -1,7 +1,7 @@
 C4::Application.routes.draw do
-  resources :achievements
-  resources :users
-  resource  :votes
+  resources :achievements, only: [:show, :new, :create, :index]
+  resources :users, only: [:show]
+  resource  :votes, only: [:create]
 
   root :to => 'achievements#index'
 end
