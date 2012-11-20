@@ -42,3 +42,15 @@ On peut voir cela comme un “coaching de vie”.
   Stockage cloud : {Amazon S3}[http://aws.amazon.com/fr/s3/] (stockage des images) 
 
   Github : https://github.com/LeDuoDeChoc/c4
+
+== Quelques commandes
+* Créer la base :
+    bundle exec rake db:migrate
+* Remplir la base avec des données fictives 
+    bundle exec rake db:seed
+* Créer la base avec des données fictives
+    bundle exec rake db:setup
+* Lancer le serveur :
+    rails s
+* Lancer les tests rspec :
+    bundle exec rspec
