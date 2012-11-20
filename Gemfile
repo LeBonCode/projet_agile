@@ -33,4 +33,7 @@ group :development do
   gem 'guard-rspec'
   gem 'ruby_gntp'
   gem 'rb-fsevent', :require => false
+  gem 'rails_best_practices'
 end
+
+gem 'simplecov', :require => false, :group => :test
