@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121101143041) do
+ActiveRecord::Schema.define(:version => 20121120001440) do
 
   create_table "achievements", :force => true do |t|
     t.string   "title",              :null => false
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20121101143041) do
     t.datetime "updated_at",                        :null => false
   end
 
+  add_index "subscriptions", ["user_id", "achievement_id"], :name => "index_subscriptions_on_user_id_and_achievement_id"
+
   create_table "users", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -43,5 +45,7 @@ ActiveRecord::Schema.define(:version => 20121101143041) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
+
+  add_index "votes", ["user_id", "subscription_id"], :name => "index_votes_on_user_id_and_subscription_id"
 
 end
