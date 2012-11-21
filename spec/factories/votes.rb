@@ -13,5 +13,7 @@
 
 FactoryGirl.define do
   factory :vote do
+    association :user
+    association :subscription
   end
 end
