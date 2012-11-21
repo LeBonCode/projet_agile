@@ -13,4 +13,7 @@ class Vote < ActiveRecord::Base
   attr_accessible :user_id, :subscription_id
   belongs_to :user
   belongs_to :subscription
+
+  validates_presence_of :user
+  validates_presence_of :subscription
 end

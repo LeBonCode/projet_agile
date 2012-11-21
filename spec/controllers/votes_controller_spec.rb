@@ -18,5 +18,11 @@ describe VotesController do
       flash[:notice].should be_nil
       response.should redirect_to(user_path(vote.subscription.user_id))
     end
+
+    it 'should pass params to vote' do
+      post 'create', vote: { user_id: vote.user_id, subscription_id: vote.subscription_id }
+      assigns[:vote].user_id.should eq(vote.user_id)
+      assigns[:vote].subscription_id.should eq(vote.subscription_id)
+    end
   end
 end
