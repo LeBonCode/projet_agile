@@ -5,3 +5,9 @@ body {
 ul.list-achievements-user li {
   display: inline;
 }
+
+ul.current-list-achievements-user {
+  list-style: none;
+  display:inline-block;
+  vertical-align: top;
+}
