@@ -14,3 +14,4 @@
       %li
         = subscription.id
         = image_tag subscription.achievement.badge.url
+        = link_to 'Voter', votes_path( { vote: { user_id: 1, subscription_id: subscription.id } } ), method: :create
