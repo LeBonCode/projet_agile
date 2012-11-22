@@ -16,6 +16,7 @@ describe Subscription do
   it { should belong_to :user }
   it { should belong_to :achievement }
   it { should respond_to :succeeded }
+  it { should have_many :votes }
 
   it 'should have succeeded_subscriptions named scope' do
     Subscription.succeeded.to_sql.should eq(Subscription.where(succeeded: true).to_sql)

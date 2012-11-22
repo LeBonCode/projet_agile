@@ -13,6 +13,7 @@
 class Subscription < ActiveRecord::Base
   belongs_to :user
   belongs_to :achievement
+  has_many :votes
 
   scope :succeeded, where(succeeded: true)
   scope :not_succeeded, where(succeeded: false)
