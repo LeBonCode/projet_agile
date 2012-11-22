@@ -17,4 +17,15 @@ class Vote < ActiveRecord::Base
   validates_presence_of :user
   validates_presence_of :subscription
   validates_uniqueness_of :user_id, scope: :subscription_id
+
+  after_save :validate_objective!
+
+  VOTES_NUMBER = 10
+
+  def validate_objective!
+    if subscription.votes.count == VOTES_NUMBER then
+      subscription.succeeded = true
+      subscription.save
+    end
+  end
 end
