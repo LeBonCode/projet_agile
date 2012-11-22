@@ -1,4 +1,4 @@
-.%h1 Show vue
+%h1 Show vue
 - unless @succeeded_subscriptions.empty?
   %h2 Liste des objectifs accomplis
   %ul.list-achievements-user
@@ -14,5 +14,6 @@
       %li
         = subscription.id
         = image_tag subscription.achievement.badge.url
+        = "Nombre de votes : #{subscription.votes.count}"
         - unless subscription.votes.find_by_user_id(@fake_current_user.id)
-          = link_to 'Voter', votes_path( { vote: { user_id: @fake_current_user.id, subscription_id: @subscription.id } } ), method: :create
+          = link_to 'Voter', votes_path( { vote: { user_id: @fake_current_user.id, subscription_id: subscription.id } } ), method: :create
