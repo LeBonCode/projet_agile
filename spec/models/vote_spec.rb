@@ -18,4 +18,5 @@ describe Vote do
   it { should belong_to(:subscription) }
   it { should validate_presence_of(:user) }
   it { should validate_presence_of(:subscription) }
+  it { should validate_uniqueness_of(:user_id).scoped_to(:subscription_id) }
 end
