@@ -13,5 +13,7 @@
     %li= link_to "Création d'un nouvel objectif", new_achievement_path
     %li= link_to 'Voir le dernier objectif', achievement_path(Achievement.last) if Achievement.last
     %li= link_to 'Voir le profil du dernier utilisateur', user_path(User.last) if User.last
-
-
+    - if user_signed_in?
+      %li= link_to('Déconnexion', destroy_user_session_path, :method => :delete)
+    - else
+      %li= link_to('Connexion', new_user_session_path)
