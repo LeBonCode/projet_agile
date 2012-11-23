@@ -21,8 +21,8 @@
       %ul.dropdown-menu
         %li
         - if user_signed_in?
-          %li= link_to('Déconnexion', destroy_user_session_path, :method => :delete)
           %li= link_to('Editer mon compte', edit_user_registration_path)
+          %li= link_to('Déconnexion', destroy_user_session_path, :method => :delete)
         - else
           %li= link_to('Connexion', new_user_session_path)
           %li= link_to('Inscription', new_user_registration_path)
