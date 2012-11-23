@@ -18,8 +18,8 @@ describe Vote do
     end
   end
 
-  let(:vote) { FactoryGirl.build(:vote) }
-
+  let(:vote) { FactoryGirl.create(:vote) }
+  subject { vote }
   it { should allow_mass_assignment_of(:user_id) }
   it { should allow_mass_assignment_of(:subscription_id) }
   it { should belong_to(:user) }
@@ -29,20 +29,23 @@ describe Vote do
   it { should validate_uniqueness_of(:user_id).scoped_to(:subscription_id) }
   it { should have_constant(:VOTES_NUMBER) }
 
-  it 'should have after save callbacks : validate_objective!' do
-    vote.should_receive(:validate_objective!)
-    vote.run_callbacks(:save) { true }
-  end
+  context "vote not saved" do
+    let(:vote) { FactoryGirl.build(:vote) }
+    it 'should have after save callbacks : validate_objective!' do
+      vote.should_receive(:validate_objective!)
+      vote.run_callbacks(:save) { true }
+    end
 
-  it 'should validate an objective if it have the number of votes' do
-    vote.subscription.votes.stub(:count).and_return(Vote::VOTES_NUMBER)
-    expect{ vote.save }.to change{ vote.subscription.succeeded }.from(false).to(true)
-  end
+    it 'should validate an objective if it have the number of votes' do
+      vote.subscription.votes.stub(:count).and_return(Vote::VOTES_NUMBER)
+      expect{ vote.save }.to change{ vote.subscription.succeeded }.from(false).to(true)
+    end
 
-  it 'should not validate an objective if it have not the number of votes' do
-    Vote::VOTES_NUMBER-1.times do |i|
-      vote.subscription.votes.stub(:count).and_return(i)
-      expect{ vote.save }.to_not change{ vote.subscription.succeeded }.to(true)
+    it 'should not validate an objective if it have not the number of votes' do
+      Vote::VOTES_NUMBER-1.times do |i|
+        vote.subscription.votes.stub(:count).and_return(i)
+        expect{ vote.save }.to_not change{ vote.subscription.succeeded }.to(true)
+      end
     end
   end
 end

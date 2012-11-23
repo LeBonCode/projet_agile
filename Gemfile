@@ -38,4 +38,7 @@ group :development do
   gem 'rails_best_practices'
 end
 
-gem 'simplecov', :require => false, :group => :test
+group :test do
+  gem 'simplecov', :require => false
+  gem 'database_cleaner'
+end
