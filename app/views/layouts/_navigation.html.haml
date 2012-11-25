@@ -11,7 +11,6 @@
   %ul.nav
     %li= link_to 'Liste des objectifs', achievements_path
     %li= link_to 'Proposer un nouvel objectif', new_achievement_path
-    %li= link_to 'Voir le dernier objectif', achievement_path(Achievement.last) if Achievement.last
     %li= link_to 'Voir le profil du dernier utilisateur', user_path(User.last) if User.last
   %ul.nav
     %li.dropdown
