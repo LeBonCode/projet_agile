@@ -17,6 +17,9 @@ describe Subscription do
   it { should belong_to :achievement }
   it { should respond_to :succeeded }
   it { should have_many :votes }
+  it { should allow_mass_assignment_of :user_id }
+  it { should allow_mass_assignment_of :achievement_id }
+  it { should validate_uniqueness_of(:user_id).scoped_to(:achievement_id) }
 
   it 'should have succeeded_subscriptions named scope' do
     Subscription.succeeded.to_sql.should eq(Subscription.where(succeeded: true).to_sql)

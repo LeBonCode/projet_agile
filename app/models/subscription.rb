@@ -17,4 +17,8 @@ class Subscription < ActiveRecord::Base
 
   scope :succeeded, where(succeeded: true)
   scope :not_succeeded, where(succeeded: false)
+
+  attr_accessible :user_id, :achievement_id
+
+  validates_uniqueness_of :user_id, scope: :achievement_id
 end
