@@ -6,7 +6,7 @@
         = achievement.id
         = link_to achievement.title, achievement
         = achievement.description
-        - unless current_user.achievements.include?(achievement)
+        - if user_signed_in? && !current_user.achievements.include?(achievement)
           %br
           = link_to "Ajouter à mes objectifs", subscriptions_path( { subscription: { achievement_id: achievement.id} } ), method: :post
       %br
