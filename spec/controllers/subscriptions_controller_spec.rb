@@ -6,9 +6,9 @@ describe SubscriptionsController do
     def do_create
       post 'create', subscription: { user_id: subscription.user_id, achievement_id: subscription.achievement_id }
     end
-    it 'should redirect to subscriptions index' do
+    it 'should redirect to achievements index' do
       do_create
-      response.should redirect_to subscriptions_path
+      response.should redirect_to achievements_path
     end
     it 'should assign subscription' do
       do_create

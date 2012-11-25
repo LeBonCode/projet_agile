@@ -5,6 +5,6 @@ class SubscriptionsController < ApplicationController
     unless @subscription.new_record? then
       flash[:notice] = 'Vous vous êtes bien abonné à cet objectif'
     end
-    redirect_to subscriptions_path
+    redirect_to achievements_path
   end
 end
