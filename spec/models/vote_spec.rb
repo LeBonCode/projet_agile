@@ -12,12 +12,6 @@
 require 'spec_helper'
 
 describe Vote do
-  matcher :have_constant do |const|
-    match do |owner|
-      (owner.is_a?(Class) ? owner : owner.class).const_defined?(const)
-    end
-  end
-
   let(:vote) { FactoryGirl.create(:vote) }
   subject { vote }
   it { should allow_mass_assignment_of(:user_id) }
