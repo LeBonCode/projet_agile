@@ -6,5 +6,8 @@ C4::Application.routes.draw do
   resource  :votes, only: [:create]
   resource  :subscriptions, only: [:create]
 
+  authenticated :user do
+    root :to => 'achievements#index'
+  end
   root :to => 'achievements#index'
 end
