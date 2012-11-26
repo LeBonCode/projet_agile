@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require bootstrap.min.js
+//= require konami.1.3.3.pack.js
+//= require smore-inc-clippy.js-1d38fe5/build/clippy.min.js
+//= require_tree .
