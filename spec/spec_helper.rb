@@ -12,8 +12,8 @@ Spork.prefork do
   require 'rspec/rails'
   require 'rspec/autorun'
   require 'paperclip/matchers'
-
-  Dir[Rails.root.join('spec/support/**/*.rb')].each{|f| require f}
+  require 'spec/support/controller_macros'
+  require 'spec/support/devise'
 
   RSpec.configure do |config|
     config.include Paperclip::Shoulda::Matchers
