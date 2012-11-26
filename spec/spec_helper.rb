@@ -3,10 +3,10 @@ require 'spork'
 
 Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
+  Dir[Rails.root.join('spec/support/**/*.rb')].each{|f| require f}
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'paperclip/matchers'
-  Dir[Rails.root.join('spec/support/**/*.rb')].each{|f| require f}
 
   unless ENV['DRB']
     require 'simplecov'
