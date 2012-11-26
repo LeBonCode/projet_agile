@@ -1,8 +1,11 @@
-%h1
-  - if user_signed_in? && current_user == @user
-    = 'Ma page'
-  - else
-    = 'Show vue'
+- if user_signed_in? && current_user == @user
+  %h1 Ma page
+  %p
+    = @user.email
+    = @user.prenom
+    = @user.nom
+- else
+  %h1 Show vue
 - unless @succeeded_subscriptions.empty?
   %h2 Liste des objectifs accomplis
   %ul.list-achievements-user
