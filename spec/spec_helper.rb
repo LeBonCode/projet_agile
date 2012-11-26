@@ -10,7 +10,6 @@ Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
-  require 'rspec/autorun'
   require 'paperclip/matchers'
   require 'support/controller_macros.rb'
   require 'support/devise.rb'
