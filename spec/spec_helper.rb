@@ -12,8 +12,8 @@ Spork.prefork do
   require 'rspec/rails'
   require 'rspec/autorun'
   require 'paperclip/matchers'
-  require 'spec/support/controller_macros'
-  require 'spec/support/devise'
+  require 'support/controller_macros.rb'
+  require 'support/devise.rb'
 
   RSpec.configure do |config|
     config.include Paperclip::Shoulda::Matchers
