@@ -2,16 +2,16 @@ require 'rubygems'
 require 'spork'
 
 Spork.prefork do
-  unless ENV['DRB']
-    require 'simplecov'
-    SimpleCov.start 'rails'
-  end
-
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'paperclip/matchers'
   Dir[Rails.root.join('spec/support/**/*.rb')].each{|f| require f}
+
+  unless ENV['DRB']
+    require 'simplecov'
+    SimpleCov.start 'rails'
+  end
 
   RSpec.configure do |config|
     config.include Paperclip::Shoulda::Matchers
