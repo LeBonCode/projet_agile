@@ -1,9 +1,11 @@
 - if user_signed_in? && current_user == @user
   %h1 Ma page
-  %p
-    = @user.email
-    = @user.prenom
-    = @user.nom
+  %ul.user-infos
+    %li
+      = @user.prenom
+      = @user.nom
+    %li
+      = @user.email
 - else
   %h1 Show vue
 - unless @succeeded_subscriptions.empty?
