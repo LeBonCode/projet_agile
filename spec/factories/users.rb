@@ -29,6 +29,8 @@ FactoryGirl.define do
   factory :user do
     email
     password 'loremipsum'
+    prenom { Faker::Name.first_name }
+    nom { Faker::Name.last_name }
     factory :user_with_subscriptions do
       ignore do
         subscriptions_count 5
