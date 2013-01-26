@@ -28,6 +28,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'shoulda'
+  gem 'meta_request', '0.2.1'
 end
 
 group :development do
