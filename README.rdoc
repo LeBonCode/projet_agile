@@ -1,4 +1,5 @@
 == C4
+{<img src="https://codeclimate.com/github/LeDuoDeChoc/c4.png" />}[https://codeclimate.com/github/LeDuoDeChoc/c4]  
 
 Ce projet a pour objectif de permettre à ses utilisateurs d’atteindre leurs objectifs personnels.
 
