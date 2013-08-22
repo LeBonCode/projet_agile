@@ -54,7 +54,7 @@ On peut voir cela comme un “coaching de vie”.
 
   Stockage cloud : {Amazon S3}[http://aws.amazon.com/fr/s3/] (stockage des images) 
 
-  Github : https://github.com/LeDuoDeChoc/c4
+  Github : https://github.com/LeBonCode/projet_agile
 
 == Quelques commandes
 
